@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Second</title>
+	</head>
+	<body>
+		<img src="images/outside.png" id="house" height=260px width=400px>
+		<br>
+		<button onclick="firstButton()">Enter the House</button>
+		<button onclick="secondButton()">Exit The House</button>
+		<script>
+			function firstButton(){
+				document.getElementById("house").src = "images/inside.png";
+			}
+			function secondButton(){
+				document.getElementById("house").src = "images/outside.png";
+			}
+		</script>
+		
+	</body>
+</html>
