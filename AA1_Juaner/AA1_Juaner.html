@@ -131,7 +131,7 @@
 					pscore++;
 					document.getElementById("pScore").innerHTML = pscore;
 				}			
-				else{
+				if((random == 0 && player == 2) || (random == 2 && player == 1) || (random == 1 && player == 0)){
 					cscore++;
 					document.getElementById("cScore").innerHTML = cscore;
 				}
