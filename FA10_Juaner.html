@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>FA10_Juaner</title>
+	</head>
+	<body>
+		<script>
+			var randNum = Math.ceil(Math.random()*1000);
+			var hund;
+			var tens;
+			var ones;
+			var outputNum = randNum.toString();
+			document.write("Randomly generated number: " + randNum);
+			if(outputNum.length == 3){
+				hund = outputNum[0] * 100;
+				tens = outputNum[1] * 10;
+				ones = outputNum[2];
+			}
+			if(outputNum.length == 2){
+				hund = 0;
+				tens = outputNum[0] * 10;
+				ones = outputNum[1];
+			}
+			if(outputNum.length == 1){
+				hund = 0;
+				tens = 0;
+				ones = outputNum[0];
+			}
+			document.write("<br>Breakdown:" + hund + ", " + tens + ", " + ones);
+			
+		</script>
+		
+	</body>
+</html>
