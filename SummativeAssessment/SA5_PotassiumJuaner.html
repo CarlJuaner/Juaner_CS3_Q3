@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Snaxbar</title>
+		<!-- type in the necessary meta tags -->
+		<style>
+		  span {color: blue; text-decoration:underline}
+		  button {width: 100px; padding: 5px; background: pink;}
+		</style>
+
+		</head>
+	<body>
+		<h1> Welcome to The Snaxbar </h1>
+		<h2> Please select from the following items </h2>
+		<!--- provide your own 3 items and their prices in the list --->
+		<ol>
+			<li> Ice Cream price: 20.00 </li>
+			<li> Hamburger price: 50.00 </li>
+			<li> French Fries price: 15.00 </li>
+		</ol>
+		<!-- the following will be used to display purchase information -->
+		<p> Item selected : <span id="item"> </span> </p>
+		<p> Qty bought : <span id="qty"> </span> </p>
+		<p> Amount to pay for the item: <span id="bill"> </span> </p>
+		<p> Current Total Bill <span id="tbill"> </span> </p>
+		<button onclick = "order()"> Buy an Item </button>
+		<button onclick = "erase()"> Clear </button>
+		
+		<script>
+			/* do not forget to include comments in your answer */
+			var iceCream = 20;
+			var hamBurger = 50;
+			var frenchFries = 15;
+			var iceCreamT = 0;
+			var hamBurgerT = 0;
+			var frenchFriesT = 0;
+			var totalBill = 0;
+			var quantity;
+			var choice;
+			/* The function order() asks for the item that is going to be ordered by the customer (1 - Ice Cream , 2 - Hamburger , 3 - French Fries)*/
+			function order(){
+				choice = prompt("What will you order [Menu: 1 - Ice Cream , 2 - Hamburger , 3 - French Fries]: ");
+				switch(choice){
+					case "1":
+						quantity = prompt("How many will you order: ");
+						output();
+						break;
+					case "2":
+						quantity = prompt("How many will you order: ");
+						output();
+						break;
+					case "3":
+						quantity = prompt("How many will you order: ");
+						output();
+						break;
+					default:
+						alert("Wrong Input");
+						break;
+					}
+			}
+			/*The function ouptu() caclulates all the variables needed to be outputted(item, qty, bill, tbill) and displays them*/
+			function output(){
+				document.getElementById("item").innerHTML = choice;
+				document.getElementById("qty").innerHTML = quantity;	
+					if (choice == "1"){
+						document.getElementById("bill").innerHTML = (quantity*iceCream);	
+						iceCreamT = iceCreamT + (quantity*iceCream);
+					}
+					else if (choice == "2"){
+						document.getElementById("bill").innerHTML = (quantity*hamBurger);	
+						hamBurgerT = hamBurgerT + (quantity*hamBurger);
+					}
+					else if (choice == "3"){
+						document.getElementById("bill").innerHTML = (quantity*frenchFries);
+						frenchFriesT = frenchFriesT + (quantity*frenchFries);
+					}
+				totalBill = iceCreamT + hamBurgerT + frenchFriesT;
+				document.getElementById("tbill").innerHTML = totalBill;
+			}
+			/*The function erase() clears all the values(by setting the values to "") for new values to be inputted*/
+			function erase(){
+				iceCreamT = 0;
+				hamBurgerT = 0;
+				frenchFriesT = 0;
+				document.getElementById("item").innerHTML = "";
+				document.getElementById("qty").innerHTML = "";
+				document.getElementById("bill").innerHTML = "";	
+				document.getElementById("tbill").innerHTML = "";
+			}
+		</script>
+	</body>
+
+</html>

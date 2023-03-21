@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Numerology</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: lightblue; 
+            	text-align: center;
+            	font-family: arial;
+                color: navy;
+            }
+            button {padding: 10px; background:violet }
+            span {font-size: 0.5em; color: maroon}
+        </style>
+
+	</head>
+<body>
+	<h1> Your Fortune is in your name </h1>
+	<h2> Your Name is: <span id="thename"> </span></h2>
+    <h2> Today's fortune: <span id="fortune"> </span></h2>
+    
+    <button onclick="enterName()"> Click here to enter your name </button>
+    <script>
+    	/* do not forget to include comments in your answer */
+		
+		var inputName;
+		var lengthName;
+		var fortuneNum;
+		function enterName(){
+			inputName = prompt("Enter your name: ");
+			document.getElementById("thename").innerHTML = inputName;
+			lengthName = inputName.length;
+			fortuneNum = lengthName;
+			/*The while loop below will repeat until the value of fortuneNum is from 0-9*/
+			while(fortuneNum>9){
+				fortuneNum = (fortuneNum % 10) + ((fortuneNum - (fortuneNum % 10))/10);
+			}
+			/*The switch statement below outputs the fortune according to the fortuneNum*/
+			switch(fortuneNum){
+				case 0:
+					document.getElementById("fortune").innerHTML = "You will find loads of cash";
+					break;
+				case 1:
+					document.getElementById("fortune").innerHTML = "You are gonna trip and fall";
+					break;
+				case 2:
+					document.getElementById("fortune").innerHTML = "You will have a high grade on your next test";
+					break;
+				case 3:
+					document.getElementById("fortune").innerHTML = "You will be given a present";
+					break;
+				case 4:
+					document.getElementById("fortune").innerHTML = "You are gonna recieve great news";
+					break;
+				case 5:
+					document.getElementById("fortune").innerHTML = "You will fail your exam";
+					break;
+				case 6:
+					document.getElementById("fortune").innerHTML = "You will see a shooting star";
+					break;
+				case 7:
+					document.getElementById("fortune").innerHTML = "You will have a nightmare";
+					break;
+				case 8:
+					document.getElementById("fortune").innerHTML = "You will have a nice dream";
+					break;
+				case 9:
+					document.getElementById("fortune").innerHTML = "You are gonna hit your head";
+					break;
+			}
+		}
+	</script>
+    
+</body>
+</html>

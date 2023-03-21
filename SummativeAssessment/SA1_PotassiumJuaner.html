@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Toss coin</title>
+		<!-- provide the necessary meta tags -->
+        <style>
+        	body {background: navy; 
+            	text-align: center;
+            	font-family: arial;
+                color: white;
+            }
+            button {padding: 10px; background:violet }
+            span {color: yellow}
+            #coin, h5 {color: yellow; }
+            #coin { background: gray; 
+            	width: 25px; 
+                height: 25px;
+                padding: 25px;          
+                border: 5px dashed darkgray;
+                border-radius: 50%;
+                margin: 0 auto;
+                
+            }
+            
+        </style>
+
+	</head>
+	<body onload="getGuess()">
+        <h1> Heads or Tail? </h1>
+        <h2 onclick="getGuess()"> Click here to change your Guess: <span id="guess"> </span></h2>
+        <h2 onclick="changeGuess()" id="coin"> H </span></h2>   
+        <h5> Click on the coin above to randomly change its face and compare with your guess </h5> 
+        <script>
+            /* do not forget to include comments to this script */
+			var random;
+			var uGuess;
+            var getGuess = function() {
+                uGuess = prompt("Type H for head and T for tail","H");
+                uGuess.toUpperCase; // converting to an uppercase letter
+                (uGuess != "H" && uGuess != "T") ?	alert("Wrong Input"):
+                    guess.innerHTML = uGuess;
+            }
+			/*This code creates a random guess using Math.random*/
+			function changeGuess(){
+				random = Math.floor(Math.random()*2);
+				if (random == 1){
+					random = "H";
+					document.getElementById("coin").innerHTML = random;
+				}
+				else{
+					random = "T";
+					document.getElementById("coin").innerHTML = random;
+				}
+				result();
+			}
+			/*This code determines the winner by checking if the random value is equal to the value of uGuess*/
+			function result(){
+				if (random == uGuess){
+					alert("You won!");
+				}
+				else{
+					alert("You lost");
+				}
+			}
+		</script>
+	</body>
+</html>
+
